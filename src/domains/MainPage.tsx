@@ -4,22 +4,23 @@ import Cards from '../shared/components/Cards';
 import MainPageProps from '../shared/values/MainPageProps';
 
 const containerStyle: React.CSSProperties = {
-    width: '30%',
     position: 'relative',
     marginTop: '50px',
   };
 
-const MainPage: React.FC<MainPageProps> = ( {user, items} ) => {
+  const MainPage: React.FC<MainPageProps> = ({ user, items }) => {
+
     return (
         <div>
             <Header user={user} />
+            
             <div className="cardsContainer" style={containerStyle}>
                 {items.map((item, index) => (
-                <div key={index}>
-                    <Cards items={[item]} swipable={true} index={index} />
-                </div>
-            ))}
-             </div>
+                    <div key={index}>
+                        <Cards items={[item]} swipable={true} index={index} />
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

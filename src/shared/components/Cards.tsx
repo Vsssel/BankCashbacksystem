@@ -1,5 +1,3 @@
-// Card.jsx
-
 import React, { useState } from 'react';
 import SwipeableCardProps from '../values/SwipeableCardProps';
 
