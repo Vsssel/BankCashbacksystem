@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import MainPage from '../src/domains/MainPage'
 
@@ -12,7 +11,6 @@ const App = () => {
   const user = {
     name: 'Assel',
     surname: 'Artykbay',
-    totalAmount: 123456789
   }
 
   return (

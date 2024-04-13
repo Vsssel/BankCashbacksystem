@@ -1,9 +1,12 @@
-// Card.jsx
-
 import React, { useState } from 'react';
 import SwipeableCardProps from '../values/SwipeableCardProps';
+import styled from 'styled-components';
 
-const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }> = ({ items, swipable, index }) => {
+interface CardProps extends SwipeableCardProps {
+  index: number;
+}
+
+const Card: React.FC<CardProps> = ({ items, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -14,24 +17,31 @@ const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }>
     setIsHovered(false);
   };
 
-  const cardStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: `${index * 50}px`,
-    transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-    transition: 'transform 0.3s ease-in-out'
-  };
+  const StyledCard = styled.div`
+    border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @media only screen and (max-width: 768px) {
+      position: absolute;
+      top: ${index * 50}px;
+      transform: translateY(${isHovered ? '-20px' : '0px'});
+      transition: transform 0.3s ease-in-out;
+    }
+  `;
 
   return (
-    <div className={`card ${swipable ? 'cardStyle' : ''}`}
-      onMouseEnter={swipable ? handleMouseEnter : undefined}
-      onMouseLeave={swipable ? handleMouseLeave : undefined}
-      style={swipable ? cardStyle : undefined}
+    <StyledCard
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <img className='cardCover' src={items[0].image} alt={items[0].title} />
       <h2>{items[0].title}</h2>
       <p>{items[0].description}</p>
-    </div>
+    </StyledCard>
   );
 };
 
 export default Card;
+
