@@ -1,5 +1,5 @@
 import './App.css';
-import AppCard from './domains/AppCard'; 
+import AppCard from './shared/AppCard'; 
 
 function App() {
   const appData = {
