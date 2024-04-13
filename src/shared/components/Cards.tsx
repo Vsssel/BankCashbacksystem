@@ -18,16 +18,17 @@ const Card: React.FC<CardProps> = ({ items, index }) => {
   };
 
   const StyledCard = styled.div`
-    border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 13px;
       padding: 10px;
+      width: 300px;
+      height: 180px;
       margin: 10px;
+      transform: translateY(${isHovered ? '-20px' : '0px'});
+      transition: transform 0.3s ease-in-out;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     @media only screen and (max-width: 768px) {
       position: absolute;
       top: ${index * 50}px;
-      transform: translateY(${isHovered ? '-20px' : '0px'});
-      transition: transform 0.3s ease-in-out;
     }
   `;
 
