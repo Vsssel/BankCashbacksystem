@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SwipeableCardProps from '../values'
+import SwipeableCardProps from '../values/SwipeableCardProps'
 
 const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }> = ({ items, swipable, index }) => {
   const [isHovered, setIsHovered] = useState(false);

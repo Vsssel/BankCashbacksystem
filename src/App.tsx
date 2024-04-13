@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './shared/components/Cards';
+import MainPage from '../src/domains/MainPage';
 
 const App = () => {
   const items = [
@@ -8,21 +8,15 @@ const App = () => {
     { image: 'image3.jpg', title: 'Title 3', description: 'Description 3' }
   ];
 
-  const containerStyle = {
-    width: '30%',
-    position: 'relative',
-    marginTop: '50px',
-  };
+  const user = {
+    name: 'Assel',
+    surname: 'Artykbay',
+    totalAmount: 123456789
+  }
 
   return (
-    <div className="cardsContainer" style={containerStyle}>
-      {items.map((item, index) => (
-        <div key={index}>
-          <Card items={[item]} swipable={true} index={index} />
-        </div>
-      ))}
-    </div>
+    <MainPage items={items} user={user} />
   );
 }
 
-export default App
+export default App;

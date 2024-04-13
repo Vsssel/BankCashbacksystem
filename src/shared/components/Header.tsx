@@ -1,5 +1,5 @@
 import React from 'react';
-import UserInformation from '../values';
+import UserInformation from '../values/UserInformation';
 
 interface HeaderProps {
     user: UserInformation;
@@ -8,9 +8,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ user }) => {
     return (
         <header className="header">
-            <div>
-                <p>Total Amount: {user.totalAmount}</p>
-            </div>
             <div>
                 <p>Full name: {user.name} {user.surname}</p>
             </div>
