@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
             </div>
         </header>
     );
-}
+};
 
 export default Header;
 

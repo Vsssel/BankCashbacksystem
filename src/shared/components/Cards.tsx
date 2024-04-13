@@ -1,5 +1,7 @@
+// Card.jsx
+
 import React, { useState } from 'react';
-import SwipeableCardProps from '../values/SwipeableCardProps'
+import SwipeableCardProps from '../values/SwipeableCardProps';
 
 const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }> = ({ items, swipable, index }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -12,10 +14,9 @@ const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }>
     setIsHovered(false);
   };
 
-  const cardStyle = {
+  const cardStyle: React.CSSProperties = {
     position: 'absolute',
     top: `${index * 50}px`,
-    left: 0,
     transform: isHovered ? 'scale(1.1)' : 'scale(1)',
     transition: 'transform 0.3s ease-in-out'
   };
@@ -30,8 +31,7 @@ const Card: React.FC<SwipeableCardProps & { swipable?: boolean, index: number }>
       <h2>{items[0].title}</h2>
       <p>{items[0].description}</p>
     </div>
-  )
-}
-  
+  );
+};
 
 export default Card;

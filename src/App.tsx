@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import MainPage from '../src/domains/MainPage';
+import MainPage from '../src/domains/MainPage'
 
 const App = () => {
   const items = [
@@ -15,8 +16,9 @@ const App = () => {
   }
 
   return (
-    <MainPage items={items} user={user} />
+    <MainPage user={user} items={items} />
   );
 }
 
 export default App;
+
