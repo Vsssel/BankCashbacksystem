@@ -9,7 +9,7 @@ const Input: React.FC<InputProps> = ({ icon, iconPosition, ...rest }) => {
     };
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'relative', margin: '20px' }}>
             {iconPosition === 'left' && icon && (
                 <div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)' }}>
                     {renderIcon()}
